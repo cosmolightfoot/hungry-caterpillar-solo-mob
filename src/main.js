@@ -69,10 +69,11 @@ for(let index = 0; index < buttons.length; index++) {
 
 function danceSegment(color) {
     let colorSelect = document.querySelectorAll('.' + color);
-    //add class "dance" to those elements
+    let selectAll = document.querySelectorAll('.body-segment');
+    for(let index = 0; index < selectAll.length; index++) {
+        selectAll[index].classList.remove('dance');
+    }
     for(let index = 0; index < colorSelect.length; index++){
         colorSelect[index].classList.add('dance');
-        console.log(colorSelect);
-        //remove class
     }
 }
