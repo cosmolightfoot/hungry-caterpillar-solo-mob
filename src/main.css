@@ -1,10 +1,45 @@
 body {
-    //text-align: center;
+
 }
 
 #canvas {
     width: 600px;
     height: 350px;
     border: 3px solid;
-    
+    display: inline-block;
+    margin: 10px;
+}
+.body-segment {
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    border-radius: 100px;
+    margin-top: 130px;
+    margin-left: -15px;
+    background-color: yellow;
+}
+#caterpillar-head {
+    height: 150px;
+    width: 150px;
+    margin-top: 50px;
+    margin-right: -30px;
+}
+.firebrick {
+    border: 19px solid firebrick;
+}
+.darkgoldenrod {
+    border: 19px solid darkgoldenrod;
+}
+.darkmagenta {
+    border: 19px solid darkmagenta;
+}
+.slateblue {
+    border: 19px solid slateblue;
+}
+.teal {
+    border: 19px solid teal;
+}
+.dance {
+    position: relative;
+    top: -40px;
 }
