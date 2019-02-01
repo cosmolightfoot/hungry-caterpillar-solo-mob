@@ -5,28 +5,28 @@ const danceButtonsNode = document.getElementById('dance-buttons');
 const buttons = [
     {
         color: 'firebrick',
-        imgSrc: '',
+        imgSrc: '../assets/apple.jpeg',
         fruit: 'apple'
     },
     {
         color: 'darkgoldenrod',
-        imgSrc: '',
-        fruit: 'banana'
+        imgSrc: '../assets/starfruit.jpeg',
+        fruit: 'starfruit'
     },
     {
         color: 'darkmagenta',
-        imgSrc: '',
+        imgSrc: '../assets/pomegranite.jpeg',
         fruit: 'pomegranite'
     },
     {
         color: 'slateblue',
-        imgSrc: '',
-        fruit: 'blueberry'
+        imgSrc: '../assets/plum.jpeg',
+        fruit: 'plum'
     },
     {
         color: 'teal',
-        imgSrc: '',
-        fruit: 'pineapple'
+        imgSrc: '../assets/coconut.jpeg',
+        fruit: 'coconut'
     },
 ];
 
@@ -34,10 +34,13 @@ const buttons = [
 for(let index = 0; index < buttons.length; index++) {
     const colorButton = document.createElement('button');
     let color = buttons[index].color;
-    colorButton.textContent = color;
+    let icon = buttons[index].imgSrc;
+    const buttonIcon = document.createElement('img');
+    buttonIcon.src = icon;
     colorButton.classList.add('color-button');
     colorButton.value = color;   
     colorButtonsNode.appendChild(colorButton);
+    colorButton.appendChild(buttonIcon);
     colorButton.addEventListener('click', function() {
         bodySegments(color);
     });
@@ -48,7 +51,7 @@ function bodySegments(color) {
     let numberOfSegments = document.querySelectorAll('.body-segment').length;
     bodySegment.classList.add(color);
     bodySegment.classList.add('body-segment');
-    if(numberOfSegments < 7) {
+    if(numberOfSegments < 10) {
         canvasNode.appendChild(bodySegment);
     }
 
@@ -57,9 +60,8 @@ for(let index = 0; index < buttons.length; index++) {
     const danceButton = document.createElement('button');
     let fruit = buttons[index].fruit;
     let color = buttons[index].color;
-    danceButton.textContent = fruit;
     danceButton.classList.add('dance-button');
-    danceButton.classList.add('color');
+    danceButton.classList.add(fruit);
     danceButton.value = color;
     danceButtonsNode.appendChild(danceButton);
     danceButton.addEventListener('click', function() {
