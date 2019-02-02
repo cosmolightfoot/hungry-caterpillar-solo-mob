@@ -2,6 +2,7 @@ const colorButtonsNode = document.getElementById('color-buttons');
 const canvasNode = document.getElementById('canvas');
 const danceButtonsNode = document.getElementById('dance-buttons');
 
+
 const buttons = [
     {
         color: 'firebrick',
