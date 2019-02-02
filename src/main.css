@@ -20,6 +20,7 @@ h1 {
     margin-top: 130px;
     margin-left: -15px;
     background-color: yellow;
+    transition: all 250ms ease-in-out;
 }
 #caterpillar-head {
     height: 150px;
@@ -95,5 +96,6 @@ h1 {
 
 .dance {
     position: relative;
-    top: -40px;
+    transform: translateY(-40px);
+    /* transform: translate3d(-10px, 0px, 10px) */
 }

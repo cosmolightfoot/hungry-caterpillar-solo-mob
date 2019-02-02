@@ -1,7 +1,7 @@
 const colorButtonsNode = document.getElementById('color-buttons');
 const canvasNode = document.getElementById('canvas');
 const danceButtonsNode = document.getElementById('dance-buttons');
-
+const randomDanceButtonNode = document.getElementById('random-dance-button');
 
 const buttons = [
     {
@@ -68,6 +68,18 @@ for(let index = 0; index < buttons.length; index++) {
     danceButton.addEventListener('click', function() {
         danceSegment(color);
     });
+
+    //create element for button
+    const randomDanceButton = document.createElement('button');
+
+    //add 
+
+    //append button to parent node
+
+    //add event listener
+
+    
+
 }
 
 function danceSegment(color) {
