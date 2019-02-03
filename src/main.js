@@ -78,11 +78,26 @@ function randomDance() {
     randomDanceButton.value = 'random';
     randomDanceButtonNode.appendChild(randomDanceButton);
     randomDanceButton.addEventListener('click', function() {
-        let randomSelector = Math.floor(Math.random() * 5);
-        let random = buttons[randomSelector].color;
+        var uniqueRandoms = [];
+        var numRandoms = 5;
+        function makeUniqueRandom() {
+            // refill the array if needed
+            if(uniqueRandoms.length === 0) {
+                for(var i = 0; i < numRandoms; i++) {
+                    uniqueRandoms.push(i);
+                }
+            }
+            var index = Math.floor(Math.random() * uniqueRandoms.length);
+            var val = uniqueRandoms[index];
         
+            // now remove that value from the array
+            uniqueRandoms.splice(index, 1);
         
-        danceSegment(random);
+            return val;
+        }
+            
+        
+        danceSegment(val);
     });
     
 }
