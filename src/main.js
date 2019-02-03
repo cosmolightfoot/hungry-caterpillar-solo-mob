@@ -67,18 +67,26 @@ for(let index = 0; index < buttons.length; index++) {
     danceButtonsNode.appendChild(danceButton);
     danceButton.addEventListener('click', function() {
         danceSegment(color);
-    });
+    });    
+}
+randomDance();
 
-    //create element for button
+function randomDance() {
     const randomDanceButton = document.createElement('button');
-
-    //add 
-
-    //append button to parent node
-
-    //add event listener
-
-    
+    randomDanceButton.classList.add('random-button');
+    randomDanceButton.textContent = 'random dance';
+    randomDanceButton.value = 'random';
+    randomDanceButtonNode.appendChild(randomDanceButton);
+    randomDanceButton.addEventListener('click', function() {
+        let randomSelector = Math.floor(Math.random() * 5);
+        let random = buttons[randomSelector].color;
+        let lastRandomSelector = undefined;
+        if(lastRandomSelector === undefined) {
+            randomSelector = Math.floor()
+        }
+        lastRandomSelector = randomSelector;
+        danceSegment(random);
+    });
 
 }
 
