@@ -80,14 +80,11 @@ function randomDance() {
     randomDanceButton.addEventListener('click', function() {
         let randomSelector = Math.floor(Math.random() * 5);
         let random = buttons[randomSelector].color;
-        let lastRandomSelector = undefined;
-        if(lastRandomSelector === undefined) {
-            randomSelector = Math.floor()
-        }
-        lastRandomSelector = randomSelector;
+        
+        
         danceSegment(random);
     });
-
+    
 }
 
 function danceSegment(color) {
