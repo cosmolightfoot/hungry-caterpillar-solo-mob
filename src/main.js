@@ -76,7 +76,7 @@ randomDance();
 function randomDance() {
     const randomDanceButton = document.createElement('button');
     randomDanceButton.classList.add('random-button');
-    randomDanceButton.textContent = 'random dance';
+    randomDanceButton.textContent = 'RANDOM';
     randomDanceButton.value = 'random';
     randomDanceButtonNode.appendChild(randomDanceButton);
     randomDanceButton.addEventListener('click', function() {

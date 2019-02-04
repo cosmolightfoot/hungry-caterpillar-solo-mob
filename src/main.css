@@ -46,13 +46,15 @@ h1 {
     margin: 25px;
     background-color: yellow;
 }
-/* .random-button {
+.random-button {
     height: 85px;
-    width: 85px;
-    border-radius: 100px;
+    width: 105px;
+    font-weight: bold;
+    /* border-radius: 100px; */
+    border: 19px solid firebrick;
     margin: 25px;
     background-color: yellow;
-} */
+}
 .firebrick {
     border: 19px solid firebrick;
 }

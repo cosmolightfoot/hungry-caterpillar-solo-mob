@@ -1,8 +1,8 @@
 Abstract: 
 
-Add an HTML section for a random button
-Add a button in the HTML that will cause random colored body segments to trigger
-Link the random buttom to JS
+block out and import functions
+
+
 
 
 settimeout in milliseconds
