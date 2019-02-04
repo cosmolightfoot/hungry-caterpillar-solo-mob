@@ -20,17 +20,6 @@ function makeUniqueRandom() {
     return val;
 }
 
-function randomTest(testNumber) {
-    for(var index = 0; index < testNumber; index++) {
-        makeUniqueRandom(); 
-        console.log(makeUniqueRandom());
-    }
-}
-
-randomTest(20);
-
-
-
 test('seeing if this function will return random numbers', function(assert) {
     const testNumber = 20;
     const results = randomTest(testNumber);

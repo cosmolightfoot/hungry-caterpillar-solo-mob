@@ -2,7 +2,8 @@ const colorButtonsNode = document.getElementById('color-buttons');
 const canvasNode = document.getElementById('canvas');
 const danceButtonsNode = document.getElementById('dance-buttons');
 const randomDanceButtonNode = document.getElementById('random-dance-button');
-
+var uniqueRandoms = [];
+var outerVal;
 const buttons = [
     {
         color: 'firebrick',
@@ -31,6 +32,7 @@ const buttons = [
     },
 ];
 
+var numRandoms = buttons.length;
 
 for(let index = 0; index < buttons.length; index++) {
     const colorButton = document.createElement('button');
@@ -78,29 +80,35 @@ function randomDance() {
     randomDanceButton.value = 'random';
     randomDanceButtonNode.appendChild(randomDanceButton);
     randomDanceButton.addEventListener('click', function() {
-        var uniqueRandoms = [];
-        var numRandoms = 5;
-        function makeUniqueRandom() {
-            // refill the array if needed
-            if(uniqueRandoms.length === 0) {
-                for(var i = 0; i < numRandoms; i++) {
-                    uniqueRandoms.push(i);
-                }
-            }
-            var index = Math.floor(Math.random() * uniqueRandoms.length);
-            var val = uniqueRandoms[index];
         
-            // now remove that value from the array
-            uniqueRandoms.splice(index, 1);
-        
-            return val;
-        }
-            
-        
-        danceSegment(val);
+        let randomNumber = makeUniqueRandom();
+        danceSegment(buttons[randomNumber].color);
     });
     
 }
+function makeUniqueRandom() {
+    if(uniqueRandoms.length === 0) {
+        for(var i = 0; i < numRandoms; i++) {
+            uniqueRandoms.push(i);
+        }
+    }
+    var index = Math.floor(Math.random() * uniqueRandoms.length);
+    var val = uniqueRandoms[index];
+    uniqueRandoms.splice(index, 1);
+    var specialCase = outerVal - 1;
+    if(uniqueRandoms.length < 4) {
+        if(outerVal > val) {
+            uniqueRandoms.splice(specialCase, 0, outerVal);
+        }
+        else {
+            uniqueRandoms.splice(outerVal, 0, outerVal);
+        }
+    }
+    outerVal = val;
+
+    return val;
+}
+
 
 function danceSegment(color) {
     let colorSelect = document.querySelectorAll('.' + color);
