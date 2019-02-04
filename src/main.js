@@ -3,14 +3,11 @@ const canvasNode = document.getElementById('canvas');
 const danceButtonsNode = document.getElementById('dance-buttons');
 const randomDanceButtonNode = document.getElementById('random-dance-button');
 const randomDanceButton = document.createElement('button');
-// const firebrickSelect = document.querySelectorAll('.firebrick');
-// const goldenrodSelect = document.querySelectorAll('.darkgoldenrod');
-// const magentaSelect = document.querySelectorAll('.darkmagenta');
-// const slateBlueSelect = document.querySelectorAll('.slateblue');
-// const tealSelect = document.querySelectorAll('.teal');
+const autofeedButtonNode = document.getElementById('autofeed-button');
 var uniqueRandoms = [];
 var outerVal;
 var cycleVal = -1;
+// var cycleValFeed = -1;
 
 const buttons = [
     {
@@ -41,7 +38,6 @@ const buttons = [
 ];
 
 var numRandoms = buttons.length;
-
 for(let index = 0; index < buttons.length; index++) {
     const colorButton = document.createElement('button');
     let color = buttons[index].color;
@@ -65,7 +61,7 @@ function bodySegments(color) {
     if(numberOfSegments < 10) {
         canvasNode.appendChild(bodySegment);
     }
-
+    
 }
 for(let index = 0; index < buttons.length; index++) {
     const danceButton = document.createElement('button');
@@ -81,6 +77,22 @@ for(let index = 0; index < buttons.length; index++) {
 }
 randomDance();
 wormDance();
+autofeed();
+
+function autofeed() {
+    const autofeedButton = document.createElement('button');
+    autofeedButton.classList.add('random-button');
+    autofeedButton.value = 'autofeed';
+    autofeedButton.textContent = 'AUTOFEED';
+    randomDanceButtonNode.appendChild(autofeedButton);
+    autofeedButton.addEventListener('click', function() {
+        for(let index = 0; index < 10; index++) {
+            linearCycle();
+            bodySegments(buttons[cycleVal].color);
+        }
+    });
+}
+
 
 function randomDance() {
     randomDanceButton.classList.add('random-button');
