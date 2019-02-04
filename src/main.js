@@ -3,7 +3,6 @@ const canvasNode = document.getElementById('canvas');
 const danceButtonsNode = document.getElementById('dance-buttons');
 const randomDanceButtonNode = document.getElementById('random-dance-button');
 const randomDanceButton = document.createElement('button');
-const autofeedButtonNode = document.getElementById('autofeed-button');
 var uniqueRandoms = [];
 var outerVal;
 var cycleVal = -1;
