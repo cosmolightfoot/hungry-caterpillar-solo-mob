@@ -1,6 +1,9 @@
 body {
     text-align: center;
 }
+p {
+    color: hotpink;
+}
 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: pink;

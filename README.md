@@ -2,9 +2,6 @@ Abstract:
 
 block out and import functions
 
-
-
-
 settimeout in milliseconds
 css "animate rule"
 css animations and transitionsn

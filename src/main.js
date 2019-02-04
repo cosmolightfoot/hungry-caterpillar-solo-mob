@@ -2,8 +2,16 @@ const colorButtonsNode = document.getElementById('color-buttons');
 const canvasNode = document.getElementById('canvas');
 const danceButtonsNode = document.getElementById('dance-buttons');
 const randomDanceButtonNode = document.getElementById('random-dance-button');
+const randomDanceButton = document.createElement('button');
+// const firebrickSelect = document.querySelectorAll('.firebrick');
+// const goldenrodSelect = document.querySelectorAll('.darkgoldenrod');
+// const magentaSelect = document.querySelectorAll('.darkmagenta');
+// const slateBlueSelect = document.querySelectorAll('.slateblue');
+// const tealSelect = document.querySelectorAll('.teal');
 var uniqueRandoms = [];
 var outerVal;
+var cycleVal = -1;
+
 const buttons = [
     {
         color: 'firebrick',
@@ -72,20 +80,32 @@ for(let index = 0; index < buttons.length; index++) {
     });    
 }
 randomDance();
+wormDance();
 
 function randomDance() {
-    const randomDanceButton = document.createElement('button');
     randomDanceButton.classList.add('random-button');
     randomDanceButton.textContent = 'RANDOM';
     randomDanceButton.value = 'random';
     randomDanceButtonNode.appendChild(randomDanceButton);
     randomDanceButton.addEventListener('click', function() {
-        
+        console.log(firebrickSelect.length);
         let randomNumber = makeUniqueRandom();
         danceSegment(buttons[randomNumber].color);
+        
     });
-    
 }
+function wormDance() {
+    const wormDanceButton = document.createElement('button');
+    wormDanceButton.classList.add('random-button');
+    wormDanceButton.textContent = 'SEQUENCE';
+    wormDanceButton.value = 'random';
+    randomDanceButtonNode.appendChild(wormDanceButton);
+    wormDanceButton.addEventListener('click', function() {
+        linearCycle();
+        danceSegment(buttons[cycleVal].color);
+    });
+}
+
 function makeUniqueRandom() {
     if(uniqueRandoms.length === 0) {
         for(var i = 0; i < numRandoms; i++) {
@@ -107,6 +127,17 @@ function makeUniqueRandom() {
     outerVal = val;
 
     return val;
+}
+
+function linearCycle() {
+    //create a function that returns 0 on the first click and then 1, 2, etc till
+    //reaches cycle length, at which point it returns to zero
+    if(cycleVal < 4) {
+        cycleVal++;
+    }
+    else {
+        cycleVal = 0;
+    }
 }
 
 
