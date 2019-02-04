@@ -1,6 +1,8 @@
 Abstract: 
 
 block out and import functions
+move the index.html out of the source folder
+make an 'autofeed' button
 
 settimeout in milliseconds
 css "animate rule"

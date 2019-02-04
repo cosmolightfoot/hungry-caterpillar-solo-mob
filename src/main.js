@@ -15,27 +15,27 @@ var cycleVal = -1;
 const buttons = [
     {
         color: 'firebrick',
-        imgSrc: '../assets/apple.jpeg',
+        imgSrc: './assets/apple.jpeg',
         fruit: 'apple'
     },
     {
         color: 'darkgoldenrod',
-        imgSrc: '../assets/starfruit.jpeg',
+        imgSrc: './assets/starfruit.jpeg',
         fruit: 'starfruit'
     },
     {
         color: 'darkmagenta',
-        imgSrc: '../assets/pomegranite.jpeg',
+        imgSrc: './assets/pomegranite.jpeg',
         fruit: 'pomegranite'
     },
     {
         color: 'slateblue',
-        imgSrc: '../assets/plum.jpeg',
+        imgSrc: './assets/plum.jpeg',
         fruit: 'plum'
     },
     {
         color: 'teal',
-        imgSrc: '../assets/coconut.jpeg',
+        imgSrc: './assets/coconut.jpeg',
         fruit: 'coconut'
     },
 ];
@@ -88,7 +88,6 @@ function randomDance() {
     randomDanceButton.value = 'random';
     randomDanceButtonNode.appendChild(randomDanceButton);
     randomDanceButton.addEventListener('click', function() {
-        console.log(firebrickSelect.length);
         let randomNumber = makeUniqueRandom();
         danceSegment(buttons[randomNumber].color);
         
