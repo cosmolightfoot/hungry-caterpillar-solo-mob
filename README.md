@@ -75,3 +75,6 @@ The new array is
 [0,1,2] 2, .splice(3, 0, 4) [0,1,2,4] .splice(outerVal--, 0, outerVal)
 [0,2,3] 3, .splice(3, 0, 4) [0,2,3,4] .splice(outerVal--, 0, outerVal)
 
+
+
+dfgdfgdfgdsfg
